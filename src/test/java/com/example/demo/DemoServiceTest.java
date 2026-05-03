@@ -9,8 +9,7 @@ public class DemoServiceTest {
     DemoService service = new DemoService();
 
     @Test
-    void testFailure() {
-        // ❌ This will fail (intentional)
-        assertEquals("OK", service.getMessage("test"));
+    void testMessage() {
+        assertThrows(IllegalArgumentException.class, () -> service.getMessage(null));
     }
 }

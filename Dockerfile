@@ -1,9 +1,10 @@
-FROM openjdk:17
+FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-# ❌ Wrong file name (jar won’t exist)
-COPY target/demo.jar app.jar
+COPY target/*.jar app.jar
 
-# ❌ Running as root
+RUN addgroup app && adduser --system --ingroup app app
+USER app
+
 ENTRYPOINT ["java","-jar","app.jar"]
