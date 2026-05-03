@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/NSKiru-thiga77/CICD_sonar_jenkins_Docker.git'
+                git branch: 'master', url: 'https://github.com/NSKiru-thiga77/CICD_sonar_jenkins_Docker.git'
             }
         }
 
